@@ -7,7 +7,7 @@ import React, {
     NavigatorIOS,
 } from 'react-native';
 
-var Index = require('./weatherView');
+import Index from './weatherView';
 
 class RNWeather extends Component {
     render() {
