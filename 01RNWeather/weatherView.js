@@ -48,7 +48,7 @@ class weatherView extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.searchView}>
+        <View style={styles.searchBar}>
           <TextInput
             style={styles.cityNameInput}
             onChangeText={(cityName) => this.setState({ cityName }) }
@@ -56,7 +56,7 @@ class weatherView extends Component {
             clearButtonMode='while-editing'
             placeholder='请输入城市名称'
             />
-          <TouchableOpacity style={styles.searchButton}
+          <TouchableOpacity style={styles.button}
             onPress={() => this.fetchData() }>
             <Text style={styles.buttonText}>
               查询
@@ -87,11 +87,11 @@ const styles = StyleSheet.create({
     marginTop: 65,
     padding: 8,
   },
-  searchView: {
+  searchBar: {
     height: 30,
     flexDirection: 'row',
   },
-  searchButton: {
+  button: {
     height: 30,
     flex: 1,
     backgroundColor: '#00BFFF',
