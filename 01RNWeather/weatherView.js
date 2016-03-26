@@ -35,12 +35,17 @@ class weatherView extends Component {
     })
       .then((response) => response.json())
       .then((responseData) => {
-        this.setState({
-          weather: responseData.retData.weather,
-          nowTemp: responseData.retData.temp,
-          minTemp: responseData.retData.l_tmp,
-          maxTemp: responseData.retData.h_tmp,
-        });
+        if (responseData.errNum == 0) {
+          this.setState({
+            weather: responseData.retData.weather,
+            nowTemp: responseData.retData.temp,
+            minTemp: responseData.retData.l_tmp,
+            maxTemp: responseData.retData.h_tmp,
+          });
+        } else {
+          alert('输入有误!');
+        }
+
       })
       .done();
   }
