@@ -6,7 +6,7 @@ import React, {
   StyleSheet,
   Text,
   TextInput,
-  TouchableHighlight,
+  TouchableOpacity,
   View,
 } from 'react-native';
 
@@ -46,24 +46,22 @@ class weatherView extends Component {
   }
 
   render() {
-
     return (
       <View style={styles.container}>
         <View style={styles.searchView}>
           <TextInput
-            style={styles.cityNameField}
+            style={styles.cityNameInput}
             onChangeText={(cityName) => this.setState({ cityName }) }
             value={this.state.cityName}
             clearButtonMode='while-editing'
             placeholder='请输入城市名称'
             />
-          <TouchableHighlight style={styles.searchButton}
-            onPress={() => this.fetchData() }
-            underlayColor='#99d9f4'>
+          <TouchableOpacity style={styles.searchButton}
+            onPress={() => this.fetchData() }>
             <Text style={styles.buttonText}>
               查询
             </Text>
-          </TouchableHighlight>
+          </TouchableOpacity>
         </View>
         <View style={styles.weatherView}>
           <View style={styles.weatherLeftView}>
@@ -86,37 +84,30 @@ class weatherView extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     marginTop: 65,
     padding: 8,
-    backgroundColor: '#97FFFF',
   },
   searchView: {
     height: 30,
-    borderRadius: 4,
     flexDirection: 'row',
-    backgroundColor: '#eeeeee',
   },
   searchButton: {
     height: 30,
     flex: 1,
-    flexDirection: 'row',
-    marginBottom: 10,
-    alignSelf: 'stretch',
+    backgroundColor: '#00BFFF',
     justifyContent: 'center'
   },
   buttonText: {
     fontSize: 14,
-    color: '#48BBEC',
+    color: '#FFFFFF',
     alignSelf: 'center'
   },
-  cityNameField: {
+  cityNameInput: {
     height: 30,
     flex: 9,
-    borderColor: '#0099ff',
-    backgroundColor: '#ffffff',
+    borderColor: '#00BFFF',
     borderWidth: 1,
-    borderRadius: 4,
+    paddingLeft: 6,
   },
   weatherView: {
     height: 160,
