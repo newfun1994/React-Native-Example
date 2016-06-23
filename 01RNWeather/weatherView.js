@@ -8,7 +8,8 @@ import React, {
   TextInput,
   TouchableOpacity,
   View,
-} from 'react-native';
+  Image,
+} from 'react-native'
 
 var REQUEST_URL = 'https://apis.baidu.com/apistore/weatherservice/cityname?cityname=';
 
