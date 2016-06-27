@@ -89,10 +89,10 @@ class weatherView extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    marginTop: 65,
-    padding: 8,
-  },
+    container: {
+      marginTop: 65,
+      padding: 8,
+    },
   searchBar: {
     height: 30,
     flexDirection: 'row',
